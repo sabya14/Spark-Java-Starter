@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+
+    compile group: 'org.apache.spark', name: 'spark-core_2.11', version: '2.4.4'
+    compile group: 'org.apache.spark', name: 'spark-sql_2.11', version: '2.4.4'
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '3.1.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:5.2.0"
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+
+
+}
